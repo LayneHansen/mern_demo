@@ -4,18 +4,18 @@ const { Todo } = require('../models');
 router  
     .route('/')
     .get((req, res) => {
-        // Todo
-        // .find({})
-        // .then(data => {
-        //     console.log('TODO GET');
-        //     console.log({ data })
-        //     res.json({ success: true, data })
-        // })
-        // .catch(err => {
-        //     console.log({ err });
-        //     res.json({ success: false });
-        // });
-        // console.log('hit the get route in /api/todos');
+        Todo
+        .find({})
+        .then(data => {
+            console.log('TODO GET');
+            console.log({ data })
+            res.json({ success: true, data })
+        })
+        .catch(err => {
+            console.log({ err });
+            res.json({ success: false });
+        });
+        console.log('hit the get route in /api/todos');
         res.json({ todo: "read my mind at all times" });
     })
     .post((req, res) => {
